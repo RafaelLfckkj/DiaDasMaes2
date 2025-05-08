@@ -1,73 +1,86 @@
 body {
-  background-color: #e6bedc;
+  background-color: #fdf0f7;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
-html::before {
-  margin: -20px;
-}
-
-html::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
-  height: 150px;
-  background-color: #a76f9a;
-  z-index: -1;
-}
-
-.faixa {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #6d2448;
-  z-index: -1;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
+.card {
+  width: 90%;
+  margin: 50px auto;
+  background-color: #ffffff;
+  border-radius: 20px;
   padding: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 2;
+}
+
+.photo-container {
+  position: relative;
+  margin-bottom: 40px;
   text-align: center;
 }
 
-.img1 {
-  max-width: 50%;
-  height: auto;
-  margin-top: 50px;
-  transform: rotate(-4deg);
-  box-shadow: 0 4px 8px rgba(43, 31, 38, 0.685);
+.photo {
+  width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
 }
 
-.img2 {
-  max-width: 50%;
-  height: 33%;
-  margin-top: 50px;
-  transform: rotate(7deg);
-  box-shadow: 0 4px 8px rgba(43, 31, 38, 0.685);
+.photo:hover {
+  transform: scale(1.05) rotate(3deg);
 }
 
-.img3 {
-  max-width: 50%;
-  height: 33%;
-  margin-top: 50px;
-  transform: rotate(7deg);
-  position: absolute;
-  top: 700px;
-  left: 625px;
-}
-
-.pin1 {
-  width: 25px;
-  height: 25px;
-  background-color: rgb(172, 42, 81);
+.pin {
+  width: 30px;
+  height: 30px;
+  background-color: #d54983;
   border-radius: 50%;
-  position: relative;
-  top: -270px;
-  left: 385px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 3;
+}
+
+.message {
+  background-color: #ffe6f0;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.message p {
+  color: #d54983;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.banner {
+  width: 80%;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+
+.floating-hearts::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath fill="%23ff94c2" d="M10 50c0 21.54 17.46 39 39 39s39-17.46 39-39-17.46-39-39-39S10 28.46 10 50zm39 15c-3.87 0-7.47-.78-10.78-2.18a8.99 8.99 0 1 0 5.56 16.74 11.1 11.1 0 0 0 5.22-3.42 11.1 11.1 0 0 0 5.22 3.42 8.99 8.99 0 1 0 5.56-16.74A19.11 19.11 0 0 0 49 65zm0-35c8.4 0 15.47 5.66 17.6 13.33a8.99 8.99 0 1 0-17.6-2.66 5.94 5.94 0 0 0 2.42-1.8 7 7 0 1 0-10.76 8.22 5.94 5.94 0 0 0 2.42 1.8 8.99 8.99 0 1 0-5.18-16.89C33.53 35.66 40.6 30 49 30z"%3E%3C/path%3E%3C/svg%3E');
+  background-size: cover;
+  opacity: 0.4;
+  z-index: 1;
+  animation: float 15s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-20px);}
+  100% {transform: translateY(0);}
 }
